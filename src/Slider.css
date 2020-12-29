@@ -1,0 +1,117 @@
+.slide-selector{
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    background-color: blanchedalmond;
+}
+.slide-dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+.slide-action-bar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide{
+    display: none;
+}
+.slide-holder{
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    width: 500px;
+}
+ img{
+    height: 350px;
+    object-fit:cover;
+    width: inherit;
+}
+.selected-slide{
+    display: block;
+    height: 400px;
+}
+.slide-left{
+    animation: slide-in;
+    animation-duration: 1s;
+}
+
+.slide-right{
+    animation: slide-out;
+    animation-duration: 1s;
+}
+.slide{
+    width: 100%;
+}
+
+.shadow-slide{
+    display: block;
+    position: absolute;
+    top: 0%;
+    right: 100%;
+}
+
+.shadow-slide.slide-left{
+    animation: shadow-slide-in;
+    animation-duration: 1s;
+}
+
+.shadow-slide.slide-right{
+    animation: shadow-slide-out;
+    animation-duration: 1s;
+}
+
+@keyframes shadow-slide-in{
+    from { transform: translateX(0%);}
+    to {transform: translateX(100%);}
+}
+
+@keyframes shadow-slide-out{
+    from { transform: translateX(100%);}
+    to {transform: translateX(200%);}
+}
+
+@keyframes shadow-slide-in{
+    from { transform: translateX(100%);}
+    to {transform: translateX(0%);}
+}
+
+@keyframes slide-in{
+    from { transform: translateX(100%);}
+    to {transform: translateX(0%);}
+}
+
+@keyframes slide-out{
+    from { transform: translateX(-100%);}
+    to {transform: translateX(0%);}
+}
+
+.prev, .next{
+    height: 40px;
+    width: 40px;
+   border-radius: 50%;
+   background-color: red;
+   color: white;
+   border: 1px solid black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   margin: 0px 10px;
+   position: relative;
+}
+
+.prev > span, .next > span{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   font-weight: bolder;
+
+}
