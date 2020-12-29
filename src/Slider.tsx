@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import "./Slider.css";
 const SLIDES = [
   {
+    id: 1,
     title: "1",
     imgUrl: "https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%201"
   },
   {
+    id: 2,
     title: "2",
     imgUrl: "https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%202"
   },
   {
+    id: 3,
     title: "3",
     imgUrl: "https://via.placeholder.com/550x350/DDDDDD/000000/?text=Slide%203"
   },
   {
+    id: 4,
     title: "4",
     imgUrl: "https://via.placeholder.com/350x550/DDDDDD/000000/?text=Slide%204"
   }
@@ -25,7 +29,6 @@ export const Slider: React.FC<any> = () => {
     [displayedSlide]: "selected-slide"
   });
 
-  const slide = SLIDES.find((eachslide, index) => index === displayedSlide);
   const slideToRight = (currentSlide: any) =>
     Math.abs(currentSlide + 1) % SLIDES.length;
   const slideToLeft = (currentSlide: any) =>
@@ -60,7 +63,7 @@ export const Slider: React.FC<any> = () => {
           {SLIDES.map((eachSlide, index) => {
             return (
               <div className={`slide ${slideToAnimate[index] || ""}`}>
-                <img src={eachSlide.imgUrl} />
+                <img src={eachSlide.imgUrl} alt={eachSlide.title} />
               </div>
             );
           })}
